@@ -6,11 +6,12 @@ const { userRouter } = require('./routes/user.route');
 const { auth } = require('./middleware/auth.middleware');
 const { UserModel } = require('./models/user.model');
 const port = process.env.port || 8080;
-
+const cors = require("cors")
 
 
 // middlewares 
 app.use(express.json())
+app.use(cors())
 // home route 
 
 app.get("/", (req, res) => res.send(`<button style="font-size:3rem;padding :20px 50px"> Authentication App </button>`))
